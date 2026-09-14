@@ -23,6 +23,18 @@ chmod 755 ~/bin/usearch
 > ⚠️ 注意：USEARCH 是商业软件，学术使用免费但需遵守许可协议。
 > 本仓库内 v5–v11 的旧版**二进制**系由作者捐赠为公有领域（CC0-1.0，见 `LICENSE`），但**新版 USEARCH/USEARCH12 等**仍受 drive5 许可条款约束。
 
+## UCHIME（嵌合体检测）
+
+UCHIME 是一款用于检测核糖体 RNA 基因序列中嵌合体（chimera）的工具。嵌合体是 PCR 扩增过程中产生的人工产物，会导致 OTU 数量高估，因此在微生物组分析中必须进行嵌合体检测和去除。
+
+- 官网：`https://www.drive5.com/usearch/manual/uchime_algo.html`
+
+**安装方式**
+
+- 作为 USEARCH 的一部分发布（推荐）：下载 USEARCH 后即可使用（本仓库 `bin/` 内 9/10/11 各版本提供 `-uchime_ref`、`-uchime_denovo`、`-uchime2_ref`、`-uchime3_denovo` 等子命令）
+- QIIME 1.x 内置：通过 `parallel_identify_chimeric_seqs.py -m blast_fragments` 调用
+- QIIME 2.x 内置：DADA2 和 Deblur 去噪过程中自动进行嵌合体检测
+
 ## 仓库内容
 
 - `bin/`：usearch `5.2.32` → `11.0.667` 共 65 个可执行文件（linux / osx / win × 32/64 位）；各文件 MD5 见上游 `README.md` 清单（本仓库为 `rcedgar/usearch_old_binaries` 的 fork）
