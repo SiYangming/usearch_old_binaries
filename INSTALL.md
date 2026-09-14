@@ -31,7 +31,8 @@ UCHIME 是一款用于检测核糖体 RNA 基因序列中嵌合体（chimera）�
 
 **安装方式**
 
-- 作为 USEARCH 的一部分发布（推荐）：下载 USEARCH 后即可使用（本仓库 `bin/` 内 9/10/11 各版本提供 `-uchime_ref`、`-uchime_denovo`、`-uchime2_ref`、`-uchime3_denovo` 等子命令）
+- 作为 USEARCH 的一部分发布（推荐）：下载 USEARCH 后即可使用。
+  本仓库 `bin/` 内的 32 位免费构建**实测**：`usearch11.0.667_i86linux32` 可用 `-uchime3_denovo` 与 `-uchime2_ref`（后者需 `-mode` 参数，如 `-mode high_accuracy`）；`usearch9.0.2132` 与 `usearch10.0.240` 中这两个命令名不可用（v9 的报错原文为 `uchime_denovo not supported, use cluster_otus or uchime2_denovo` / `uchime_ref not supported, use uchime2_ref`）；三个版本都带 `-cluster_otus`，v11 另有 `-unoise3`（要求序列头含 `size=`）。需要完整嵌合体检测能力，建议用官方最新版 USEARCH 或 QIIME 内置流程
 - QIIME 1.x 内置：通过 `parallel_identify_chimeric_seqs.py -m blast_fragments` 调用
 - QIIME 2.x 内置：DADA2 和 Deblur 去噪过程中自动进行嵌合体检测
 
@@ -44,4 +45,4 @@ UCHIME 是一款用于检测核糖体 RNA 基因序列中嵌合体（chimera）�
 
 - 嵌合体检测：`ChimeraSlayer`（microbiomeutil，见 `SiYangming/microbiomeutil`）
 - 双端拼接：`fastq-join`（ea-utils，见 `SiYangming/ea-utils` 的 `INSTALL.md`）
-- 本仓库的 `usearch_old_binaries` 为旧版本留存；USEARCH 9/10/11 的 `-uchime*`、`-cluster_otus`、`-unoise3` 等子命令可替代部分 QIIME 1.x 流程中的 uclust/uchime
+- 本仓库为 USEARCH 旧版本留存；实测 v11 构建可用 `-uchime3_denovo`、`-uchime2_ref`、`-cluster_otus`、`-unoise3`，v9/v10 免费构建含 `-cluster_otus`，可替代部分 QIIME 1.x 流程中的 uclust/uchime
