@@ -26,7 +26,7 @@ chmod 755 ~/bin/usearch
 ## 仓库内容
 
 - `bin/`：usearch `5.2.32` → `11.0.667` 共 65 个可执行文件（linux / osx / win × 32/64 位）；各文件 MD5 见上游 `README.md` 清单（本仓库为 `rcedgar/usearch_old_binaries` 的 fork）
-- Release `variant-usearch8.1.1861_i86linux32`：一份来源不明的**改动版**：`8.1.1861_i86linux32`——与 `bin/` 内原件同版本、同平台、同 BuildID（`b4e46286…`），差异为末尾被追加 1 字节 `0x0a` 且 `2203076–2203895` 区间 789 字节不同；仅供依赖该改动版的流水线取用，需要可校验的原件请用 `bin/usearch8.1.1861_i86linux32`（MD5 `1fc7b91bad6eba3518d719e74d018007`）
+- Release `variant-usearch8.1.1861_i86linux32`：一份来源不明的**改动版**（基于 `bin/usearch8.1.1861_i86linux32`）——与 `bin/` 内原件同版本、同平台、同 BuildID（`b4e46286…`），差异为末尾被追加 1 字节 `0x0a` 且 `2203076–2203895` 区间 789 字节不同；仅供依赖该改动版的流水线取用，需要可校验的原件请用 `bin/usearch8.1.1861_i86linux32`（MD5 `1fc7b91bad6eba3518d719e74d018007`）
 
 ## 相关工具（QIIME 1.x 时代）
 
